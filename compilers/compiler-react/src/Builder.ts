@@ -12,7 +12,7 @@ import eventMapping from './eventMapping';
 
 function capitalize(str: string) {
 	str = str.trim();
-	return str ? str[0].toUpperCase() + str.substring(1) : null;
+	return str ? str[0].toUpperCase() + str.substring(1) : str;
 }
 function kebabToCamel(str: string) {
 	return str.replace(/-([a-z])/g, function(match, letter) {

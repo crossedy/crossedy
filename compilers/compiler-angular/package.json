@@ -1,0 +1,42 @@
+{
+	"name": "@crossedy/compiler-angular",
+	"version": "0.1.0",
+	"description": "Angular compiler for Crossedy",
+	"main": "./dist/index.cjs",
+	"module": "./dist/index.mjs",
+	"types": "./dist/index.d.ts",
+	"exports": {
+		".": {
+			"types": "./dist/types/index.d.ts",
+			"import": "./dist/esm/index.mjs",
+			"require": "./dist/cjs/index.cjs"
+		}
+	},
+	"scripts": {
+		"install-dev": "npm install && run-p _install-dev:**",
+		"_install-dev:rollup": "cp ../../rollup.common.mjs ./.rollup.common.mjs",
+		"build": "npm run clean && npm run _build:lib",
+		"_build:lib": "rollup -c",
+		"clean": "rm -rf dist"
+	},
+	"author": "Damien Duboeuf <smeagolworms4@gmail.com>",
+	"license": "MIT",
+	"dependencies": {
+		"@angular/compiler": "^20.3.2",
+		"@vue/compiler-core": "^3.5.21",
+		"@vue/compiler-dom": "^3.5.21",
+		"prettier": "^3.6.2"
+	},
+	"devDependencies": {
+		"@rollup/plugin-typescript": "^12.1.4",
+		"@types/node": "^24.5.2",
+		"npm-run-all": "^4.1.5",
+		"rollup": "^4.52.0",
+		"tslib": "^2.8.1",
+		"typescript": "^5.9.2"
+	},
+	"files": [
+		"dist",
+		"README.md"
+	]
+}
