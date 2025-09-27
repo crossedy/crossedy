@@ -1,0 +1,4 @@
+{
+	"name": "@crossedy/wrapper-common",
+	"main": "./index.ts"
+}

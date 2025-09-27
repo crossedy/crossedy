@@ -1,0 +1,50 @@
+//@import '../../scss/include';
+
+.cdy-title {
+
+	font-weight: normal;
+	//@include reset-main;
+	//display: block;
+	//font-weight: $font-weight-regular;
+	//font-family: $font-family-primary;
+	//
+	&--bolded {
+		font-weight: bolder;
+		//font-weight: $font-weight-bold;
+	}
+	//
+	//&--secondary {
+	//	font-family: $font-family-secondary;
+	//}
+	//
+	//&--h1 {
+	//	font-size: $font-size-wild-l;
+	//	line-height: $line-height-wild-l;
+	//	margin-bottom: $spacing-xl;
+	//}
+	//&--h2 {
+	//	font-size: $font-size-wild-m;
+	//	line-height: $line-height-wild-m;
+	//	margin-bottom: $spacing-l;
+	//}
+	//&--h3 {
+	//	font-size: $font-size-wild-s;
+	//	line-height: $line-height-wild-s;
+	//	margin-bottom: $spacing-s;
+	//}
+	//&--h4 {
+	//	font-size: $font-size-xxl;
+	//	line-height: $line-height-xxl;
+	//	margin-bottom: $spacing-xs;
+	//}
+	//&--h5 {
+	//	font-size: $font-size-xl;
+	//	line-height: $line-height-xl;
+	//	margin-bottom: $spacing-xs;
+	//}
+	//&--h6 {
+	//	font-size: $font-size-l;
+	//	line-height: $line-height-l;
+	//	margin-bottom: $spacing-xs;
+	//}
+}

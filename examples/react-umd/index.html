@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8" />
+	<title>Crossedy - Example React UMD</title>
+	<script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+	<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+
+	<!-- Babel pour pouvoir écrire du JSX directement -->
+	<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+	<script src="/node_modules/%40crossedy/react/dist/umd/crossedy.react.full.js"></script>
+	<link  rel="stylesheet" href="/node_modules/%40crossedy/react/dist/css/crossedy.react.css"/>
+</head>
+<body>
+<div id="root"></div>
+
+<!-- Script JSX -->
+<script type="text/babel">
+	// Un composant simple en React
+
+	const { CdyTitle } = Crossedy;
+	const { useState, StrictMode } = React;
+
+	function App() {
+		const [ titleBolded, setTitleBolded ] = useState(true);
+
+		return (
+			<div>
+				<CdyTitle>H1 title</CdyTitle>
+				<CdyTitle hTag="h2">H2 title</CdyTitle>
+				<CdyTitle hTag="h2">H2 title</CdyTitle>
+				<CdyTitle hTag="h2">H2 title</CdyTitle>
+				<CdyTitle hTag="h3" style={{ background: 'red' }}>H3 title styled</CdyTitle>
+				<CdyTitle hTag="h3" className={{ cool: true }}>H3 title styled</CdyTitle>
+				<CdyTitle hTag="h4" bolded={titleBolded}>H4 <button onClick={() => setTitleBolded(!titleBolded)}>CHANGE</button></CdyTitle>
+			</div>
+		);
+	}
+
+	// Rendu dans la page
+	const root = ReactDOM.createRoot(document.getElementById("root"));
+	root.render(<StrictMode><App/></StrictMode>);
+</script>
+</body>
+</html>

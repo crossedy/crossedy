@@ -1,0 +1,22 @@
+{
+	"compilerOptions": {
+		"target": "esnext",
+		"module": "esnext",
+		"strict": true,
+		"moduleResolution": "bundler",
+		"esModuleInterop": true,
+		"baseUrl": ".",
+		"paths": {
+			"@crossedy/wrapper-react/*": [
+				"src/*"
+			]
+		}
+	},
+	"include": [
+		"src/**/*.ts",
+		"src/**/*.tsx"
+	],
+	"exclude": [
+		"node_modules"
+	]
+}

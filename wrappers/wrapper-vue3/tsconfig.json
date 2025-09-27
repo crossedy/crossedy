@@ -1,0 +1,24 @@
+{
+	"compilerOptions": {
+		"target": "esnext",
+		"module": "esnext",
+		"strict": true,
+		"moduleResolution": "bundler",
+		"esModuleInterop": true,
+		"types": [
+			"node"
+		],
+		"baseUrl": ".",
+		"paths": {
+			"@crossedy/wrapper-vue3/*": [
+				"src/*"
+			]
+		}
+	},
+	"include": [
+		"src/**/*.ts"
+	],
+	"exclude": [
+		"node_modules"
+	]
+}

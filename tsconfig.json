@@ -1,0 +1,13 @@
+{
+	"references": [
+		{ "path": "./compilers/compiler-vue3" },
+		{ "path": "./unplugin/unplugin-vue3" },
+		{ "path": "./components/react" },
+		{ "path": "./components/vue3" },
+		{ "path": "./wrappers/wrapper-common" },
+		{ "path": "./wrappers/wrapper-vue3" }
+	],
+    "compilerOptions": {
+        "jsx": "react"
+    }
+}

@@ -1,0 +1,21 @@
+{
+	"compilerOptions": {
+		"target": "esnext",
+		"module": "esnext",
+		"moduleResolution": "bundler",
+		"strict": true,
+		"esModuleInterop": true,
+		"baseUrl": ".",
+		"paths": {
+			"@crossedy/wrapper-common/*": [
+				"src/*"
+			]
+		}
+	},
+	"include": [
+		"src/**/*.ts"
+	],
+	"exclude": [
+		"node_modules"
+	]
+}

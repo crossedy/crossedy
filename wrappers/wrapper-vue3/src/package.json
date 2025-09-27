@@ -1,0 +1,4 @@
+{
+	"name": "@crossedy/wrapper-vue3",
+	"main": "./index.ts"
+}

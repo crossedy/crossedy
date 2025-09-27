@@ -1,0 +1,30 @@
+{
+	"compilerOptions": {
+		"target": "esnext",
+		"module": "esnext",
+		"strict": true,
+		"moduleResolution": "bundler",
+		"esModuleInterop": true,
+		"resolveJsonModule": true,
+		"preserveSymlinks": true,
+		"jsx": "react-jsx",
+		"jsxImportSource": "react",
+		"baseUrl": ".",
+		"paths": {
+			"@/*": [
+				"src/*"
+			],
+		},
+		"lib": [
+			"esnext",
+			"dom",
+			"dom.iterable"
+		]
+	},
+	"include": [
+		"src"
+	],
+	"exclude": [
+		"node_modules"
+	]
+}

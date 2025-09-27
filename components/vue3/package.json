@@ -1,0 +1,32 @@
+{
+	"name": "@crossedy/vue3",
+	"version": "0.1.0",
+	"author": "Damien Duboeuf <smeagolworms4@gmail.com>",
+	"license": "MIT",
+	"scripts": {
+		"install-dev": "npm install && run-p _install-dev:**",
+		"_install-dev:rollup": "cp ../../rollup.common.mjs ./.rollup.common.mjs",
+		"_install-dev:link_common": "rm -f src/common && ln -s ../../common src/common",
+		"_install-dev:link-crossedy": "../../bin/link-crossedy.mjs",
+		"build": "run-s clean _build:**",
+		"_build:0:lib": "rollup -c",
+		"_build:1:min": "terser  dist/umd/source-design-system.vue3.js --compress --mangle --source-map -o dist/umd/source-design-system.vue3.min.js",
+		"clean": "rm -rf dist",
+		"dev": "vite"
+	},
+	"dependencies": {
+		"@crossedy/wrapper-vue3": "^0.1.16",
+		"vue": "^3.5.21"
+	},
+	"devDependencies": {
+		"@crossedy/unplugin-vue3": "^0.1.7",
+		"@vitejs/plugin-vue": "^6.0.1",
+		"npm-run-all": "^4.1.5",
+		"rollup": "^4.52.0",
+		"sass": "^1.93.1",
+		"tsc-alias": "^1.8.16",
+		"typescript": "^5.9.2",
+		"vite": "^7.1.7",
+		"vite-plugin-vue-devtools": "^8.0.2"
+	}
+}
