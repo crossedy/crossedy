@@ -2,9 +2,9 @@ import path from 'node:path';
 import fs from 'node:fs/promises';
 import { createUnplugin } from 'unplugin';
 import { createFilter, type FilterPattern } from '@rollup/pluginutils';
-import { compile } from '@crossedy/compiler-vue3';
+import { compile, type CompileOption } from '@crossedy/compiler-angular';
 
-export interface CdyVueUnpluginOptions {
+export interface CdyVueUnpluginOptions extends Omit<CompileOption, 'filename'> {
 	include?: FilterPattern; // défaut: voir logique par bundler ci-dessous
 	exclude?: FilterPattern;
 	sourceMap?: boolean;     // défaut: true
@@ -17,6 +17,7 @@ const Unplugin = createUnplugin<CdyVueUnpluginOptions | undefined>((userOptions,
 		include = /\.cdy\.vue$/,
 		exclude,
 		sourceMap = true,
+		...compileOptions
 	} = userOptions || {};
 	const filter = createFilter(include, exclude);
 
@@ -33,7 +34,7 @@ const Unplugin = createUnplugin<CdyVueUnpluginOptions | undefined>((userOptions,
 	};
 
 	return {
-		name: 'cdy-react-plugin',
+		name: 'cdy-angular-plugin',
 		enforce: 'pre',
 
 		resolveId(id, importer) {
@@ -53,9 +54,10 @@ const Unplugin = createUnplugin<CdyVueUnpluginOptions | undefined>((userOptions,
 
 			const filename = path.basename(abs);
 			const source = await fs.readFile(abs, 'utf8');
-			const { code, map } = compile(source, {
+			const { code, map } = await compile(source, {
+				...compileOptions,
 				filename,
-				sourceMap
+				sourceMap,
 			});
 
 			return {

@@ -1,7 +1,7 @@
 {
-	"name": "@crossedy/unplugin-react",
-	"version": "0.1.1",
-	"description": "React unplugin compiler for Crossedy",
+	"name": "@crossedy/unplugin-angular",
+	"version": "0.1.0",
+	"description": "Angular unplugin compiler for Crossedy",
 	"main": "./dist/index.cjs",
 	"module": "./dist/index.mjs",
 	"types": "./dist/index.d.ts",
@@ -23,7 +23,7 @@
 	"author": "Damien Duboeuf <smeagolworms4@gmail.com>",
 	"license": "MIT",
 	"dependencies": {
-		"@crossedy/compiler-react": "^0.1.1",
+		"@crossedy/compiler-angular": "^0.1.0",
 		"@rollup/pluginutils": "^5.3.0",
 		"unplugin": "^2.3.10"
 	},

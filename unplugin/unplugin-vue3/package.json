@@ -1,7 +1,7 @@
 {
 	"name": "@crossedy/unplugin-react",
 	"version": "0.1.0",
-	"description": "React compiler for Crossedy",
+	"description": "React unplugin compiler for Crossedy",
 	"main": "./dist/index.cjs",
 	"module": "./dist/index.mjs",
 	"types": "./dist/index.d.ts",
